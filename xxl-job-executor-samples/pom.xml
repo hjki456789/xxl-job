@@ -16,5 +16,13 @@
         <module>xxl-job-executor-sample-jfinal</module>
         <module>xxl-job-executor-sample-nutz</module>
     </modules>
+    
+    <!-- MAVEN项目发布到 Nexus私服配置 -->
+	<distributionManagement>
+		<repository>
+			<id>connector</id>
+			<url>http://192.168.1.188:7001/nexus/content/repositories/ivyb2b</url>
+		</repository>
+	</distributionManagement>
 
 </project>
