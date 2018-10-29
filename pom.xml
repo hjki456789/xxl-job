@@ -51,7 +51,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
+				<artifactId>maven-compiler-plugin</artifactId>  
 				<version>3.1</version>
 				<configuration>
 					<source>1.7</source>
@@ -162,6 +162,7 @@
                     </plugin>
 				</plugins>
 			</build>
+			<!-- 
 			<distributionManagement>
 				<snapshotRepository>
 					<id>oss</id>
@@ -172,6 +173,14 @@
 					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 				</repository>
 			</distributionManagement>
+			 -->
+				 <!-- MAVEN项目发布到 Nexus私服配置 -->
+				<distributionManagement>
+					<repository>
+						<id>connector</id>
+						<url>http://192.168.1.188:7001/nexus/content/repositories/ivyb2b</url>
+					</repository>
+				</distributionManagement>
 		</profile>
 	</profiles>
 
