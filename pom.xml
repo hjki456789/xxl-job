@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.xuxueli</groupId>
 	<artifactId>xxl-job</artifactId>
-	<version>1.9.2-SNAPSHOT</version>
+	<version>1.9.2</version>
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
@@ -174,14 +174,20 @@
 				</repository>
 			</distributionManagement>
 			 -->
-				 <!-- MAVEN项目发布到 Nexus私服配置 -->
-				<distributionManagement>
-					<repository>
-						<id>connector</id>
-						<url>http://192.168.1.188:7001/nexus/content/repositories/ivyb2b</url>
-					</repository>
-				</distributionManagement>
 		</profile>
 	</profiles>
+	 <!-- MAVEN项目发布到 Nexus私服配置 -->
+	<distributionManagement>
+	  <!--  -->
+	  <snapshotRepository>
+		<id>xxl-job</id>
+		<url>http://192.168.1.188:7001/nexus/content/repositories/snapshots/</url>
+	   </snapshotRepository>
+	  
+		<repository>
+			<id>xxl-job</id>
+			<url>http://192.168.1.188:7001/nexus/content/repositories/ivyb2b</url>
+		</repository>
+	</distributionManagement>
 
 </project>
