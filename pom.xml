@@ -46,7 +46,6 @@
 
 	<build>
 		<plugins>
-<<<<<<< HEAD
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>  
@@ -81,8 +80,6 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-=======
->>>>>>> master
 		</plugins>
 	</build>
 
