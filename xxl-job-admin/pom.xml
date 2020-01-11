@@ -70,16 +70,40 @@
 	</dependencies>
 
 	<build>
+		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
+				<configuration>
+					<skip>false</skip>
+					<addResources>true</addResources>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
 							<goal>repackage</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- 打包依赖jar包 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<includeTypes>jar</includeTypes>
+							<type>jar</type>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
