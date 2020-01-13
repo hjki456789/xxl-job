@@ -7,3 +7,5 @@ script: mvn -DskipTests=true clean package
 
 # script: mvn deploy assign profile
 deploy: mvn -DskipTests=true deploy -P release
+
+deploy: mvn -DskipTests=true deploy -P dev
